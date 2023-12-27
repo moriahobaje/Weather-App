@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Weather App Prototype 1</title>
+    <link href="style.css" rel="stylesheet">
+
+    <script>
+        // Function to Update Page
+        function loadLocation() {
+
+            if (document.getElementById("locBox").value == "") {
+                loc = "Wolverhampton";
+            } else {
+                loc = document.getElementById("locBox").value;
+            }
+
+            fetch('https://api.openweathermap.org/data/2.5/weather?q=' + loc + '&appid=997ba322c3b6c704a3bd37a737fc65f5')
+                .then(response => response.json())
+                .then(response => {
+                    ic = response.weather[0].icon;
+                    document.getElementById("icon").src = "https://openweathermap.org/img/wn/" + ic + "@2x.png"
+                    document.getElementById("cityName").innerHTML = response.name;
+                    document.getElementById("weatherName").innerHTML = response.weather[0].description;
+                })
+                .catch(err => {
+                    // Display errors in console
+                    console.log(err);
+                });
+        }
+
+        window.onload = loadLocation;
+
+
+        const element = document.getElementById("submit");
+        submit.addEventListener("click", loadLocation)
+    </script>
+
+</head>
+
+<body>
+    <h1>Weather in <span id="cityName">Loading</h1>
+    <img id="icon"></img>
+    <p id="weatherName">Please wait...</p>
+    <p>Temperature: <span id="temp">Please wait...</span></p>
+        <p>Feels like: <span id="feelTemp">Please wait...</span></p>
+        <p>Minimum Temp: <span id="minTemp">Please wait...</span></p>
+        <p>Maximum Temp: <span id="maxTemp">Please wait...</span></p>
+        <p>Humidity: <span id="maxTemp">Please wait...</span></p>
+        <img id="icon"></img>
+        <form>
+            <input type="text" id="locBox" placeholder="Enter Location Here"><br>
+        </form>
+        <button id="submit">Submittt</button>
+</body>
+
+</html>

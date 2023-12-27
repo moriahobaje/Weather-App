@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Weather App Prototype 1</title>
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/aaaa507971.js" crossorigin="anonymous"></script>
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!--Top Bit/Header: Search bar || Menu-->
+    <div class="header">
+        <form>
+            <input type="text" id="locBox" placeholder="Enter Location Here"><br>
+            <button id="submit"> <i class="fa-light fa-magnifying-glass fa-beat fa-sm"></i> </button>
+        </form>
+    </div>
+    <!--Middle Bit/Content: Weather Information || User Information-->
+    <div class="container">
+        <h1>
+            Weather in <span id="city">........please wait........</span>
+        </h1>
+        <div id="icon"><i class="fa-solid fa-cloud-sun-rain fa-beat fa-lg" style="color: #ffffff;"></i></div>
+        <div class="result">
+            <h2>Weather Condition: </h2> <span id="main"> .....Please wait.....</span> <img id="weatherImage" src="">
+
+            <h2>Current Temperature: </h2><i class="fa-light fa-temperature-half" style="color: #ff0000;"></i> &nbsp;
+            <span id="tempNow"> .....Please wait.....</span>
+
+            <h2> High: </h2> <i class="fa-light fa-temperature-half" style="color: #ff0000;"></i> &nbsp;
+            <span id="tempMin"> .....Please wait.....</span>
+
+            <h2> Low: </h2> <span id="tempMax"> .....Please wait.....</span>
+
+            <h2>Humidity: </h2> <span id="humidity"> .....Please wait.....</span>
+        </div>
+    </div>
+    <!--Bottom Bit/Footer: Copyright details || Contact Information-->
+    <div class="footer">
+
+    </div>
+</body>
+
+</html>
