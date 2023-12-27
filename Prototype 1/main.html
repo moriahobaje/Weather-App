@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <title>Weather App Prototype 1</title>
     <script src="script.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/aaaa507971.js" crossorigin="anonymous"></script>
     <link href="style.css" rel="stylesheet">
 </head>
@@ -12,13 +13,13 @@
 <body>
     <!--Top Bit/Header: Search bar || Menu-->
     <div class="header">
-        <form>
+        <form style="display: inline-flex;">
             <input type="text" id="locBox" placeholder="Enter Location Here"><br>
-            <button id="submit"> <i class="fa-light fa-magnifying-glass fa-beat fa-sm"></i> </button>
+            <button id="submit" type="button" class="btn-primary" onclick="weatherInfo()">Enter</button>
         </form>
     </div>
     <!--Middle Bit/Content: Weather Information || User Information-->
-    <div class="container">
+    <div class="container-fluid -md bg-primary">
         <h1>
             Weather in <span id="city">........please wait........</span>
         </h1>
@@ -26,7 +27,7 @@
         <div class="result">
             <h2>Weather Condition: </h2> <span id="main"> .....Please wait.....</span> <img id="weatherImage" src="">
 
-            <h2>Current Temperature: </h2><i class="fa-light fa-temperature-half" style="color: #ff0000;"></i> &nbsp;
+            <h2>Current Temperature: </h2><i class="fa-light fa-temperature-half" style="color: #ff0000;"></i>
             <span id="tempNow"> .....Please wait.....</span>
 
             <h2> High: </h2> <i class="fa-light fa-temperature-half" style="color: #ff0000;"></i> &nbsp;
@@ -39,7 +40,6 @@
     </div>
     <!--Bottom Bit/Footer: Copyright details || Contact Information-->
     <div class="footer">
-
     </div>
 </body>
 

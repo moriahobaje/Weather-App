@@ -1,7 +1,7 @@
 var city = "";
 var img_url = "";
 
-function watherInfo() {
+function weatherInfo() {
     // Get data from API
     if (document.getElementById("locBox").value == "") {
         city = "London";
@@ -26,7 +26,7 @@ function watherInfo() {
             document.getElementById("city").innerHTML = response.name;
 
             const conditionIcon = document.getElementById("weatherImage");
-            conditionIcon.src = "https://images.theconversation.com/files/336133/original/file-20200519-152298-1icmco7.jpg?ixlib=rb-1.1.0&rect=867%2C810%2C3877%2C2347&q=20&auto=format&w=320&fit=clip&dpr=2&usm=12&cs=strip";
+            conditionIcon.src = "http://openweathermap.org/img/wn/" + response.weather[0].icon + "@2x.png";
 
         })
         .catch(err => {
@@ -35,3 +35,5 @@ function watherInfo() {
             console.log(err);
         });
 }
+
+window.onload = weatherInfo;
